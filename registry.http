@@ -1,0 +1,29 @@
+### 获取所以的实例
+GET http://localhost:8484/findAll?service=cn.yoube.afrpc.UserService
+
+### 注册一个实例
+POST http://localhost:8484/reg?service=cn.yoube.afrpc.UserService
+Content-Type: application/json
+
+{
+  "scheme": "http",
+  "host": "127.0.0.1",
+  "context": "afrpc",
+  "port": 8082,
+  "status": false,
+  "parameters": {
+    "env": "dev",
+    "version": "1.0.0"
+  }
+}
+
+### 取消注册一个实例
+POST http://localhost:8484/dereg?service=cn.yoube.afrpc.UserService
+Content-Type: application/json
+
+{
+  "scheme": "http",
+  "host": "127.0.0.1",
+  "context": "afrpc",
+  "port": 8081
+}

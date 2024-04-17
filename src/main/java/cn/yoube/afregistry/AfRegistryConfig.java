@@ -1,5 +1,6 @@
 package cn.yoube.afregistry;
 
+import cn.yoube.afregistry.cluster.Cluster;
 import cn.yoube.afregistry.health.AfHealthChecker;
 import cn.yoube.afregistry.health.HealthChecker;
 import cn.yoube.afregistry.service.AfRegistryService;
@@ -20,9 +21,14 @@ public class AfRegistryConfig {
         return new AfRegistryService();
     }
 
-    @Bean(initMethod = "start", destroyMethod = "stop")
-    public HealthChecker healthChecker(@Autowired RegistryService registryService){
-        return new AfHealthChecker(registryService);
+//    @Bean(initMethod = "start", destroyMethod = "stop")
+//    public HealthChecker healthChecker(@Autowired RegistryService registryService){
+//        return new AfHealthChecker(registryService);
+//    }
+
+    @Bean(initMethod = "init")
+    public Cluster cluster(@Autowired AfRegistryConfigProperties properties){
+        return new Cluster(properties);
     }
 
 }

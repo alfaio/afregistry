@@ -9,7 +9,7 @@ Content-Type: application/json
   "scheme": "http",
   "host": "127.0.0.1",
   "context": "afrpc",
-  "port": 8082,
+  "port": 8081,
   "status": false,
   "parameters": {
     "env": "dev",
@@ -27,3 +27,29 @@ Content-Type: application/json
   "context": "afrpc",
   "port": 8081
 }
+
+### renew实例
+POST http://localhost:8484/renew?service=cn.yoube.afrpc.UserService
+Content-Type: application/json
+
+{
+  "scheme": "http",
+  "host": "127.0.0.1",
+  "context": "afrpc",
+  "port": 8081
+}
+
+### 获取服务版本
+GET http://localhost:8484/version?service=cn.yoube.afrpc.UserService
+
+### 获取info
+GET http://localhost:8484/info
+
+### 获取cluster
+GET http://localhost:8485/cluster
+
+### 获取leader
+GET http://localhost:8485/leader
+
+### 设置leader
+GET http://localhost:8484/setLeader

@@ -1,5 +1,7 @@
 package cn.yoube.afregistry;
 
+import cn.yoube.afregistry.cluster.Cluster;
+import cn.yoube.afregistry.cluster.Server;
 import cn.yoube.afregistry.model.InstanceMeta;
 import cn.yoube.afregistry.service.RegistryService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +23,8 @@ public class AfRegistryController {
 
     @Autowired
     private RegistryService registryService;
+    @Autowired
+    private Cluster cluster;
 
     @RequestMapping("/reg")
     public void register(@RequestParam String service, @RequestBody InstanceMeta instance) {
@@ -40,27 +44,53 @@ public class AfRegistryController {
         return registryService.getAllInstances(service);
     }
 
-    @RequestMapping("renew")
+    @RequestMapping("/renew")
     public void renew(@RequestParam String service, @RequestBody InstanceMeta instance) {
         log.info(" ===> renew: {} @ {}", service, instance.toUrl());
         registryService.renew(instance, service);
     }
 
-    @RequestMapping("renews")
+    @RequestMapping("/renews")
     public void renews(@RequestParam String service, @RequestBody InstanceMeta instance) {
         log.info(" ===> renews: {} @ {}", service, instance.toUrl());
         registryService.renew(instance, service.split(","));
     }
 
-    @RequestMapping("version")
+    @RequestMapping("/version")
     public Long version(@RequestParam String service) {
         log.info(" ===> version: {}", service);
         return registryService.version(service);
     }
 
-    @RequestMapping("versions")
+    @RequestMapping("/versions")
     public Map<String, Long> versions(@RequestParam String service) {
         log.info(" ===> versions: {}", service);
         return registryService.versions(service.split(","));
     }
+
+    @RequestMapping("/info")
+    public Server info() {
+        log.info(" ===> info: {}", cluster.self());
+        return cluster.self();
+    }
+
+    @RequestMapping("/cluster")
+    public List<Server> cluster() {
+        log.info(" ===> cluster: {}", cluster.getServers());
+        return cluster.getServers();
+    }
+
+    @RequestMapping("/leader")
+    public Server leader() {
+        log.info(" ===> leader: {}", cluster.leader());
+        return cluster.leader();
+    }
+
+    @RequestMapping("/setLeader")
+    public Server setLeader() {
+        cluster.self().setLeader(true);
+        log.info(" ===> setLeader: {}", cluster.self());
+        return cluster.self();
+    }
+
 }

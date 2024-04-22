@@ -30,7 +30,7 @@ public class Cluster {
     AfRegistryConfigProperties registryConfigProperties;
     @Getter
     private List<Server> servers;
-    long timeout = 20_000;
+    long period = 5_000;
     final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
     public Cluster(AfRegistryConfigProperties registryConfigProperties) {
@@ -73,7 +73,7 @@ public class Cluster {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }, 0, timeout, TimeUnit.MILLISECONDS);
+        }, 0, period, TimeUnit.MILLISECONDS);
     }
 
     private void electLeader() {
@@ -118,7 +118,7 @@ public class Cluster {
     }
 
     private void updateServers() {
-        servers.forEach(server -> {
+        servers.stream().parallel().forEach(server -> {
             if (server.equals(MYSELF)) {
                 return;
             }

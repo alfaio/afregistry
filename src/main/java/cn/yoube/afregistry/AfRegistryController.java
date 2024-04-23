@@ -2,7 +2,9 @@ package cn.yoube.afregistry;
 
 import cn.yoube.afregistry.cluster.Cluster;
 import cn.yoube.afregistry.cluster.Server;
+import cn.yoube.afregistry.cluster.Snapshot;
 import cn.yoube.afregistry.model.InstanceMeta;
+import cn.yoube.afregistry.service.AfRegistryService;
 import cn.yoube.afregistry.service.RegistryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +30,14 @@ public class AfRegistryController {
 
     @RequestMapping("/reg")
     public void register(@RequestParam String service, @RequestBody InstanceMeta instance) {
+        checkLeader();
         log.info(" ===> register: {} @ {}", service, instance.toUrl());
         registryService.register(service, instance);
     }
 
     @RequestMapping("/dereg")
     public InstanceMeta deregister(@RequestParam String service, @RequestBody InstanceMeta instance) {
+        checkLeader();
         log.info(" ===> deregister: {} @ {}", service, instance.toUrl());
         return registryService.deregister(service, instance);
     }
@@ -46,12 +50,14 @@ public class AfRegistryController {
 
     @RequestMapping("/renew")
     public void renew(@RequestParam String service, @RequestBody InstanceMeta instance) {
+        checkLeader();
         log.info(" ===> renew: {} @ {}", service, instance.toUrl());
         registryService.renew(instance, service);
     }
 
     @RequestMapping("/renews")
     public void renews(@RequestParam String service, @RequestBody InstanceMeta instance) {
+        checkLeader();
         log.info(" ===> renews: {} @ {}", service, instance.toUrl());
         registryService.renew(instance, service.split(","));
     }
@@ -91,6 +97,17 @@ public class AfRegistryController {
         cluster.self().setLeader(true);
         log.info(" ===> setLeader: {}", cluster.self());
         return cluster.self();
+    }
+
+    @RequestMapping("/snapshot")
+    public Snapshot snapshot() {
+        return AfRegistryService.snapshot();
+    }
+
+    private void checkLeader() {
+        if (!cluster.self().isLeader()) {
+            throw new RuntimeException("target server not leader, the leader is " + cluster.leader().getUrl());
+        }
     }
 
 }

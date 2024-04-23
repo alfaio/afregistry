@@ -53,3 +53,6 @@ GET http://localhost:8485/leader
 
 ### 设置leader
 GET http://localhost:8484/setLeader
+
+### 获取snapshot 8084
+GET http://localhost:8484/snapshot

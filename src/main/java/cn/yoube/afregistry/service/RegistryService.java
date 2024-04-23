@@ -2,10 +2,8 @@ package cn.yoube.afregistry.service;
 
 import cn.yoube.afregistry.model.InstanceMeta;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * interface for registry service

@@ -1,5 +1,5 @@
 ### 获取所以的实例
-GET http://localhost:8484/findAll?service=cn.yoube.afrpc.UserService
+GET http://localhost:8484/findAll?service=app1_public_dev_cn.yoube.afrpc.demo.api.OrderService
 
 ### 注册一个实例
 POST http://localhost:8484/reg?service=cn.yoube.afrpc.UserService

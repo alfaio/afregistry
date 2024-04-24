@@ -15,7 +15,7 @@ public interface RegistryService {
 
     InstanceMeta register(String service, InstanceMeta instance);
 
-    InstanceMeta deregister(String service, InstanceMeta instance);
+    InstanceMeta unregister(String service, InstanceMeta instance);
 
     List<InstanceMeta> getAllInstances(String service);
 

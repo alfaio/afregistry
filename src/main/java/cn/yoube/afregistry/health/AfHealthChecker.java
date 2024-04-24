@@ -39,7 +39,7 @@ public class AfHealthChecker implements HealthChecker {
                     String service = serviceAndInstance.substring(0, index);
                     String url = serviceAndInstance.substring(index + 1);
                     InstanceMeta instance = InstanceMeta.fromUrl(url);
-                    registryService.deregister(service, instance);
+                    registryService.unregister(service, instance);
                     AfRegistryService.TIMESTAMPS.remove(serviceAndInstance);
                 }
             });

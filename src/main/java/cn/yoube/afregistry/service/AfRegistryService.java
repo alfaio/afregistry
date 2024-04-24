@@ -43,12 +43,12 @@ public class AfRegistryService implements RegistryService {
     }
 
     @Override
-    public synchronized InstanceMeta deregister(String service, InstanceMeta instance) {
+    public synchronized InstanceMeta unregister(String service, InstanceMeta instance) {
         List<InstanceMeta> metas = REGISTRY.get(service);
         if (CollectionUtils.isEmpty(metas)) {
             return null;
         }
-        log.info(" ===> deregister instance {}", instance.toUrl());
+        log.info(" ===> unregister instance {}", instance.toUrl());
         metas.removeIf(meta -> meta.equals(instance));
         instance.setStatus(false);
         renew(instance, service);

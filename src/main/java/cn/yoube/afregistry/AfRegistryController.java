@@ -35,11 +35,11 @@ public class AfRegistryController {
         registryService.register(service, instance);
     }
 
-    @RequestMapping("/dereg")
-    public InstanceMeta deregister(@RequestParam String service, @RequestBody InstanceMeta instance) {
+    @RequestMapping("/unreg")
+    public InstanceMeta unregister(@RequestParam String service, @RequestBody InstanceMeta instance) {
         checkLeader();
-        log.info(" ===> deregister: {} @ {}", service, instance.toUrl());
-        return registryService.deregister(service, instance);
+        log.info(" ===> unregister: {} @ {}", service, instance.toUrl());
+        return registryService.unregister(service, instance);
     }
 
     @RequestMapping("/findAll")
@@ -49,17 +49,17 @@ public class AfRegistryController {
     }
 
     @RequestMapping("/renew")
-    public void renew(@RequestParam String service, @RequestBody InstanceMeta instance) {
+    public Long renew(@RequestParam String service, @RequestBody InstanceMeta instance) {
         checkLeader();
         log.info(" ===> renew: {} @ {}", service, instance.toUrl());
-        registryService.renew(instance, service);
+        return registryService.renew(instance, service);
     }
 
     @RequestMapping("/renews")
-    public void renews(@RequestParam String service, @RequestBody InstanceMeta instance) {
+    public Long renews(@RequestParam String services, @RequestBody InstanceMeta instance) {
         checkLeader();
-        log.info(" ===> renews: {} @ {}", service, instance.toUrl());
-        registryService.renew(instance, service.split(","));
+        log.info(" ===> renews: {} @ {}", services, instance.toUrl());
+        return registryService.renew(instance, services.split(","));
     }
 
     @RequestMapping("/version")

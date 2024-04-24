@@ -21,10 +21,10 @@ public class AfRegistryConfig {
         return new AfRegistryService();
     }
 
-//    @Bean(initMethod = "start", destroyMethod = "stop")
-//    public HealthChecker healthChecker(@Autowired RegistryService registryService){
-//        return new AfHealthChecker(registryService);
-//    }
+    @Bean(initMethod = "start", destroyMethod = "stop")
+    public HealthChecker healthChecker(@Autowired RegistryService registryService){
+        return new AfHealthChecker(registryService);
+    }
 
     @Bean(initMethod = "init")
     public Cluster cluster(@Autowired AfRegistryConfigProperties properties){

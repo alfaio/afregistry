@@ -1,6 +1,6 @@
-package cn.yoube.afregistry.service;
+package io.github.alfaio.afregistry.service;
 
-import cn.yoube.afregistry.model.InstanceMeta;
+import io.github.alfaio.afregistry.model.InstanceMeta;
 
 import java.util.List;
 import java.util.Map;

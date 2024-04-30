@@ -1,4 +1,4 @@
-package cn.yoube.afregistry.http;
+package io.github.alfaio.afregistry.http;
 
 
 import com.alibaba.fastjson.JSON;

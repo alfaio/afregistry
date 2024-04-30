@@ -1,8 +1,8 @@
-package cn.yoube.afregistry.health;
+package io.github.alfaio.afregistry.health;
 
-import cn.yoube.afregistry.model.InstanceMeta;
-import cn.yoube.afregistry.service.AfRegistryService;
-import cn.yoube.afregistry.service.RegistryService;
+import io.github.alfaio.afregistry.model.InstanceMeta;
+import io.github.alfaio.afregistry.service.AfRegistryService;
+import io.github.alfaio.afregistry.service.RegistryService;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Executors;

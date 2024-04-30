@@ -1,10 +1,10 @@
-package cn.yoube.afregistry;
+package io.github.alfaio.afregistry;
 
-import cn.yoube.afregistry.cluster.Cluster;
-import cn.yoube.afregistry.health.AfHealthChecker;
-import cn.yoube.afregistry.health.HealthChecker;
-import cn.yoube.afregistry.service.AfRegistryService;
-import cn.yoube.afregistry.service.RegistryService;
+import io.github.alfaio.afregistry.cluster.Cluster;
+import io.github.alfaio.afregistry.health.AfHealthChecker;
+import io.github.alfaio.afregistry.health.HealthChecker;
+import io.github.alfaio.afregistry.service.AfRegistryService;
+import io.github.alfaio.afregistry.service.RegistryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package cn.yoube.afregistry.cluster;
+package io.github.alfaio.afregistry.cluster;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

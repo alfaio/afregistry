@@ -8,12 +8,43 @@
         <version>3.2.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>cn.yoube</groupId>
+    <groupId>io.github.alfaio</groupId>
     <artifactId>afregistry</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${afregistry.version}</version>
     <name>afregistry</name>
     <description>afregistry</description>
+
+    <url>https://github.com/alfaio/afregistry</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/alfaio/afregistry/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/alfaio/afregistry.git</connection>
+        <developerConnection>scm:git:https://github.com/alfaio/afregistry.git</developerConnection>
+        <url>https://github.com/alfaio/afregistry</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>alfa</name>
+            <email>alfaio@163.com</email>
+            <url>https://github.com/alfaio</url>
+        </developer>
+    </developers>
+
     <properties>
+        <afregistry.version>0.0.1-SNAPSHOT</afregistry.version>
         <java.version>17</java.version>
     </properties>
     <dependencies>

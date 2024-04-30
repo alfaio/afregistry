@@ -1,6 +1,6 @@
-package cn.yoube.afregistry.cluster;
+package io.github.alfaio.afregistry.cluster;
 
-import cn.yoube.afregistry.model.InstanceMeta;
+import io.github.alfaio.afregistry.model.InstanceMeta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package cn.yoube.afregistry;
+package io.github.alfaio.afregistry;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

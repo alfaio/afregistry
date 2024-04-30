@@ -1,4 +1,4 @@
-package cn.yoube.afregistry.model;
+package io.github.alfaio.afregistry.model;
 
 import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;

@@ -1,11 +1,11 @@
-package cn.yoube.afregistry;
+package io.github.alfaio.afregistry;
 
-import cn.yoube.afregistry.cluster.Cluster;
-import cn.yoube.afregistry.cluster.Server;
-import cn.yoube.afregistry.cluster.Snapshot;
-import cn.yoube.afregistry.model.InstanceMeta;
-import cn.yoube.afregistry.service.AfRegistryService;
-import cn.yoube.afregistry.service.RegistryService;
+import io.github.alfaio.afregistry.cluster.Cluster;
+import io.github.alfaio.afregistry.cluster.Server;
+import io.github.alfaio.afregistry.cluster.Snapshot;
+import io.github.alfaio.afregistry.model.InstanceMeta;
+import io.github.alfaio.afregistry.service.AfRegistryService;
+import io.github.alfaio.afregistry.service.RegistryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

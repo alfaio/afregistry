@@ -1,4 +1,4 @@
-package cn.yoube.afregistry.cluster;
+package io.github.alfaio.afregistry.cluster;
 
 import lombok.extern.slf4j.Slf4j;
 

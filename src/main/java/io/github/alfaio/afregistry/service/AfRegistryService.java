@@ -1,7 +1,7 @@
-package cn.yoube.afregistry.service;
+package io.github.alfaio.afregistry.service;
 
-import cn.yoube.afregistry.cluster.Snapshot;
-import cn.yoube.afregistry.model.InstanceMeta;
+import io.github.alfaio.afregistry.cluster.Snapshot;
+import io.github.alfaio.afregistry.model.InstanceMeta;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.LinkedMultiValueMap;

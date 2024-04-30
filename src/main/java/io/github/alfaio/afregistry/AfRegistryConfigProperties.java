@@ -1,4 +1,4 @@
-package cn.yoube.afregistry;
+package io.github.alfaio.afregistry;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,7 +1,7 @@
-package cn.yoube.afregistry.cluster;
+package io.github.alfaio.afregistry.cluster;
 
-import cn.yoube.afregistry.AfRegistryConfigProperties;
-import cn.yoube.afregistry.service.AfRegistryService;
+import io.github.alfaio.afregistry.AfRegistryConfigProperties;
+import io.github.alfaio.afregistry.service.AfRegistryService;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

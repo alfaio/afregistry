@@ -1,4 +1,4 @@
-package cn.yoube.afregistry.health;
+package io.github.alfaio.afregistry.health;
 
 /**
  * @author LimMF

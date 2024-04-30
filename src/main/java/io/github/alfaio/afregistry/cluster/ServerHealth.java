@@ -1,7 +1,7 @@
-package cn.yoube.afregistry.cluster;
+package io.github.alfaio.afregistry.cluster;
 
-import cn.yoube.afregistry.http.HttpInvoker;
-import cn.yoube.afregistry.service.AfRegistryService;
+import io.github.alfaio.afregistry.http.HttpInvoker;
+import io.github.alfaio.afregistry.service.AfRegistryService;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Executors;
